@@ -1,0 +1,30 @@
+﻿@using PerkinsMonitor;
+@model IEnumerable<Session>
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sign Out - Open Lab</title>
+</head>
+<body>
+    <div class="contentArea">
+    	<form action="/SignOut/SignOut/">
+			<div class="label">Student ID: </div> <input type="text" name="ID"><input type="submit" value="Submit"> 
+    	</form>
+    </div>
+    <h2 stlye="text-align: center">Or: Click your name Here</h2>
+    <div class="contentArea">
+    	<ul>
+    	@foreach(Session s in Model)
+    	{
+    	<li><a href="/SignOut/SignOut?ID=@s.Student.ID">@s.Student.FirstName @s.Student.LastName</a></li>
+    	}
+    	</ul>
+    </div>
+</body>
+</html>

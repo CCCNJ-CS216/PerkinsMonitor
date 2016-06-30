@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sign In - Open Lab</title>
+</head>
+<body onload="signIn_setup()">
+    <div id="survey" class="contentArea">
+    	<form action="/SignIn/SignIn/">
+    		<div id="fields">
+				<div class="label">Student ID:</div><input name="ID" type="text" onkeyup="tryLookup(ID.value)"> <br>
+			</div>
+			<input type="submit">
+    	</form>
+    </div>
+</body>
+</html>
+

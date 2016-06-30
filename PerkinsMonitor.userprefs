@@ -1,0 +1,24 @@
+﻿<Properties StartupItem="PerkinsMonitor/PerkinsMonitor.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="firefox" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PerkinsMonitor/Models/StudentDatabase.cs">
+    <Files>
+      <File FileName="PerkinsMonitor/Models/Student.cs" Line="52" Column="1" />
+      <File FileName="PerkinsMonitor/Controllers/ListController.cs" Line="17" Column="38" />
+      <File FileName="PerkinsMonitor/Views/List/Index.cshtml" Line="25" Column="8" />
+      <File FileName="PerkinsMonitor/Models/StudentDatabase.cs" Line="171" Column="1" />
+      <File FileName="PerkinsMonitor/Views/SignIn/Index.cshtml" Line="2" Column="39" />
+      <File FileName="PerkinsMonitor/Content/site.css" Line="128" Column="2" />
+      <File FileName="PerkinsMonitor/Views/Shared/_Layout.cshtml" Line="11" Column="80" />
+      <File FileName="PerkinsMonitor/Controllers/SignOutController.cs" Line="27" Column="1" />
+      <File FileName="PerkinsMonitor/Views/SignOut/Index.cshtml" Line="25" Column="103" />
+      <File FileName="PerkinsMonitor/Controllers/HomeController.cs" Line="44" Column="71" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/nate/Code/Projects/PerkinsMonitor/PerkinsMonitor/Models/StudentDatabase.cs" line="55" column="24" />
+      <Breakpoint file="/home/nate/Code/Projects/PerkinsMonitor/PerkinsMonitor/Controllers/SignOutController.cs" line="23" column="25" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
