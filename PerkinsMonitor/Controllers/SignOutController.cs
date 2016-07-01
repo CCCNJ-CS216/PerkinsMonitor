@@ -29,7 +29,7 @@ namespace PerkinsMonitor.Controllers
 			IEnumerable<Session> students = db.SignedInStudents ();
 			db.Disconnect ();
 
-			return View ("~/Views/Home/Index.cshtml", students);
+			return View ("~/Views/Home/Index.cshtml", new Warning(""));
 		}
     }
 }

@@ -13,7 +13,11 @@ namespace PerkinsMonitor.Controllers
 			StudentDatabase db = new StudentDatabase ();
 			db.Connect ();
 
-			return View (db.SessionHistory());
+			string pw = System.IO.File.ReadAllLines ("/databases/password")[0];
+			if (Request.Params.AllKeys.Contains ("password") && Request.Params ["password"].Equals (pw)) {
+				return View (db.SessionHistory ());
+			} else
+				return View ("~/Views/Validator/Index.cshtml", new ValidationRequest ("/History", "password"));
         }
     }
 }

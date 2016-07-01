@@ -188,15 +188,44 @@ namespace PerkinsMonitor
 
 			var reader = ExecuteRawSQL (sql);
 
-			while (reader.Read ())
+			while (reader.Read ()) {
+				string timeIn = reader.GetString (1);
+				string timeOut = reader.GetString (2);
+
 				yield return new Session (
 					RetrieveStudent (reader.GetInt32 (0)),
 					reader.GetInt32 (3),
-					Convert.ToDateTime(reader.GetString (1)),
-					Convert.ToDateTime(reader.GetString (2)));
+					Convert.ToDateTime (timeIn),
+					Convert.ToDateTime (timeOut));
+			}
+			yield break;
+		}
+
+		/// <summary>
+		/// Get just the session history for this student
+		/// </summary>
+		/// <returns>The history for this student</returns>
+		/// <param name="ID">The student ID of the student</param>
+		public IEnumerable<Session> SessionHistory(int ID)
+		{
+			string sql = String.Format ("SELECT * FROM history WHERE studentID = {0};", ID);
+
+			var reader = ExecuteRawSQL (sql);
+
+			while (reader.Read ()) {
+				string timeIn = reader.GetString (1);
+				string timeOut = reader.GetString (2);
+
+				yield return new Session (
+					RetrieveStudent (reader.GetInt32 (0)),
+					reader.GetInt32 (3),
+					Convert.ToDateTime (timeIn),
+					Convert.ToDateTime (timeOut));
+			}
 
 			yield break;
 		}
+
 		/// <summary>
 		/// Signs the student out of the database, by moving this session into the history table and
 		/// removing them from loggedIn

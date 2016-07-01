@@ -1,0 +1,20 @@
+﻿@model PerkinsMonitor.ValidationRequest
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="contentArea">
+<h3>The following information is being requested to continue</h3>
+	<form action="@Model.Target">
+	<div id="fields">
+	@foreach(string s in @Model.RequiredParameters)
+	{
+    		<div class="label">@s</div><input id="@s" name="@s" type="password"><br>    
+    }
+    <input type="submit" id="submitButton">
+    </div>
+    </form>
+</div>
+

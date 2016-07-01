@@ -1,4 +1,6 @@
-﻿@{
+﻿@using PerkinsMonitor;
+@model Warning
+@{
 	Layout = "../Shared/_Layout.cshtml";
 }
 
@@ -7,6 +9,7 @@
 		<title>Perkins Open Computer Lab</title>
 	</head>
 	<body>
+	<div class="warning"><h2 stlye="text-align: center; color: red;">@(Model.WarningText ?? " ")</h2></div>
 	<div class="contentArea">
 		<a href="/Home/RequestSignIn">
 			<button class="signIn">Sign In</button>

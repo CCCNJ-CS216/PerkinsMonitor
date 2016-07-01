@@ -9,8 +9,6 @@
 }
 
 <body>
-	@if(Model.Count() < 2)
-	{
 	<table>
 	<tr><th>Student ID</th><th>Student</th><th>Time Started</th></tr>
 	@foreach(Session s in Model)
@@ -20,7 +18,7 @@
 			@s.Student.ID
 			</td>
 			<td>
-			@s.Student.LastName , @s.Student.FirstName
+			<a href="/UserReport?ID=@s.Student.ID">@s.Student.LastName , @s.Student.FirstName</a>
 			</td>
 			<td>
 			@s.TimeStarted.ToLongTimeString()
@@ -29,9 +27,5 @@
 		}
 
 	</table>
-	}
-	else{
-	<h2 style="text-align: center;">There are no students logged in at this time</h2>
-	}
 </body>
 

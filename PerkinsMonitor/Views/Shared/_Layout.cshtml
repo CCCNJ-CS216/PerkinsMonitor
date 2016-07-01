@@ -12,8 +12,15 @@
 	<div class="topTitle">
 		Perkins Open Computer Lab
 	</div>
+	<select name="changer" onchange="location = this.value;">
+		<option value="/">Home</option>
+ 		<option value="/List">Current Student List</option>
+ 		<option value="/History">Student History</option>
+	</select>
 </div>
+<div id="mainArea">
 	@RenderBody()
+</div>
 	<footer>
 	Cumberland County College <br>
 	3322 College Drive, Vineland, New Jersey <br>

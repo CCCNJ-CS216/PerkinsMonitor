@@ -69,7 +69,7 @@ namespace PerkinsMonitor.Controllers
 
 						db.Disconnect ();
 
-						return View ("~/Views/Home/Index.cshtml");
+						return View ("~/Views/Home/Index.cshtml", new Warning(""));
 					}
 				}
 			}

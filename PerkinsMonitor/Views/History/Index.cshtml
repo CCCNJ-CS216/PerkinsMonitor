@@ -16,10 +16,10 @@
 			@s.Student.ID
 			</td>
 			<td>
-			@s.Student.LastName , @s.Student.FirstName
+			<a href="/UserReport?ID=@s.Student.ID">@s.Student.LastName , @s.Student.FirstName</a>
 			</td>
 			<td>
-			@s.TimeStarted.ToLongTimeString() to @s.TimeEnded.ToLongTimeString()
+			@s.TimeStarted.ToLongTimeString() to @s.TimeEnded.ToLongTimeString() on @s.TimeStarted.ToLongDateString() ( @(s.TimeEnded.Subtract(s.TimeStarted ).Minutes) Minutes))
 			</td>
 		</tr>
 		}
