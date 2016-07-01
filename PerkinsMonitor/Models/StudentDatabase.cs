@@ -179,6 +179,25 @@ namespace PerkinsMonitor
 		}
 
 		/// <summary>
+		/// Get all of the sessions which have ever occured in the lab
+		/// </summary>
+		/// <returns>The history</returns>
+		public IEnumerable<Session> SessionHistory()
+		{
+			string sql = String.Format ("SELECT * FROM history;");
+
+			var reader = ExecuteRawSQL (sql);
+
+			while (reader.Read ())
+				yield return new Session (
+					RetrieveStudent (reader.GetInt32 (0)),
+					reader.GetInt32 (3),
+					Convert.ToDateTime(reader.GetString (1)),
+					Convert.ToDateTime(reader.GetString (2)));
+
+			yield break;
+		}
+		/// <summary>
 		/// Signs the student out of the database, by moving this session into the history table and
 		/// removing them from loggedIn
 		/// </summary>
@@ -192,13 +211,14 @@ namespace PerkinsMonitor
 			sql += String.Format ("DELETE FROM loggedIn WHERE studentID = {0};", ID);
 			ExecuteRawNonQuery (sql);
 
-			sql = String.Format ("INSERT INTO history (studentID, timeIn, timeOut) VALUES('{0}', '{1}', '{2}');",
+			sql = String.Format ("INSERT INTO history (studentID, timeIn, timeOut, machineNumber) VALUES('{0}', '{1}', '{2}', '{3}');",
 				ID,
 				latestSession.TimeStarted,
-				DateTime.Now);
+				DateTime.Now,
+				latestSession.MachineNumber
+			);
 
 			ExecuteRawNonQuery (sql);
-		
 		}
 		/// <summary>
 		/// Performs a raw SQL command on the database, returning the reader
@@ -213,7 +233,7 @@ namespace PerkinsMonitor
 				return null;
 			}
 		}
-
+			
 		public void ExecuteRawNonQuery(string sql)
 		{
 			SqliteCommand command = new SqliteCommand(sql, Database);

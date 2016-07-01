@@ -1,0 +1,28 @@
+﻿@using System.Collections.Generic;
+@using PerkinsMonitor;
+@model IEnumerable<Session>
+
+@{
+	Layout = "../Shared/_Layout.cshtml";
+}
+
+<body>
+	<table>
+	<tr><th>Student ID</th><th>Student</th><th>Time Elapsed</th></tr>
+	@foreach(Session s in Model)
+		{
+		<tr>
+			<td>
+			@s.Student.ID
+			</td>
+			<td>
+			@s.Student.LastName , @s.Student.FirstName
+			</td>
+			<td>
+			@s.TimeStarted.ToLongTimeString() to @s.TimeEnded.ToLongTimeString()
+			</td>
+		</tr>
+		}
+
+	</table>
+</body>

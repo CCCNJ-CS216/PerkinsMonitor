@@ -11,6 +11,7 @@ namespace PerkinsMonitor
 		public int MachineNumber { get; set; }
 
 		public DateTime TimeStarted { get; set; }
+		public DateTime TimeEnded {get; set;}
 
 		private StudentDatabase Database;
 
@@ -26,6 +27,16 @@ namespace PerkinsMonitor
 
 			TimeStarted = new DateTime(1970,1,1,0,0,0,0, DateTimeKind.Utc);
 			TimeStarted = TimeStarted.AddSeconds(timeIn).ToLocalTime();
+		}
+
+
+		public Session (Student student, int machineNumber, DateTime inTo, DateTime outOf)
+		{
+			Student = student;
+			MachineNumber = machineNumber;
+
+			TimeStarted = inTo;
+			TimeEnded = outOf;
 		}
 	}
 }

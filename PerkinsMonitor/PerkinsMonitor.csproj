@@ -97,6 +97,7 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Controllers\ListController.cs" />
+    <Compile Include="Controllers\HistoryController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -114,13 +115,18 @@
     <Content Include="Views\SignOut\Index.cshtml" />
     <Content Include="web.config" />
     <Content Include="Views\List\Index.cshtml" />
+    <Content Include="Views\History\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.102.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.102.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\HumDrum\HumDrum\HumDrum.csproj">
-      <Project>{715D15D4-68CB-4E55-B9C6-DCFE791C9B00}</Project>
-      <Name>HumDrum</Name>
-    </ProjectReference>
+    <Folder Include="Views\History\" />
   </ItemGroup>
 </Project>

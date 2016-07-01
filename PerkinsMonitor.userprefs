@@ -21,4 +21,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>HumDrum/HumDrum/HumDrum.csproj</String>
+  </DisabledProjects>
 </Properties>
