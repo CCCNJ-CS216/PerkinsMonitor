@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerkinsMonitor", "PerkinsMonitor\PerkinsMonitor.csproj", "{36DED6F7-AC08-4FDA-8EE0-8EE335B286F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumDrum", "..\..\HumDrum\HumDrum\HumDrum.csproj", "{715D15D4-68CB-4E55-B9C6-DCFE791C9B00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumDrum", "HumDrum\HumDrum\HumDrum.csproj", "{715D15D4-68CB-4E55-B9C6-DCFE791C9B00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

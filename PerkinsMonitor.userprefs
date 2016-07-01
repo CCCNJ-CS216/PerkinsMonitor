@@ -1,17 +1,17 @@
 ﻿<Properties StartupItem="PerkinsMonitor/PerkinsMonitor.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="firefox" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="PerkinsMonitor/Models/StudentDatabase.cs">
     <Files>
-      <File FileName="PerkinsMonitor/Models/Student.cs" Line="52" Column="1" />
-      <File FileName="PerkinsMonitor/Controllers/ListController.cs" Line="17" Column="38" />
-      <File FileName="PerkinsMonitor/Views/List/Index.cshtml" Line="25" Column="8" />
-      <File FileName="PerkinsMonitor/Models/StudentDatabase.cs" Line="171" Column="1" />
-      <File FileName="PerkinsMonitor/Views/SignIn/Index.cshtml" Line="2" Column="39" />
-      <File FileName="PerkinsMonitor/Content/site.css" Line="128" Column="2" />
-      <File FileName="PerkinsMonitor/Views/Shared/_Layout.cshtml" Line="11" Column="80" />
-      <File FileName="PerkinsMonitor/Controllers/SignOutController.cs" Line="27" Column="1" />
-      <File FileName="PerkinsMonitor/Views/SignOut/Index.cshtml" Line="25" Column="103" />
-      <File FileName="PerkinsMonitor/Controllers/HomeController.cs" Line="44" Column="71" />
+      <File FileName="PerkinsMonitor/Models/Student.cs" Line="1" Column="1" />
+      <File FileName="PerkinsMonitor/Controllers/ListController.cs" Line="1" Column="1" />
+      <File FileName="PerkinsMonitor/Views/List/Index.cshtml" Line="1" Column="1" />
+      <File FileName="PerkinsMonitor/Models/StudentDatabase.cs" Line="27" Column="3" />
+      <File FileName="PerkinsMonitor/Views/SignIn/Index.cshtml" Line="1" Column="1" />
+      <File FileName="PerkinsMonitor/Content/site.css" Line="1" Column="1" />
+      <File FileName="PerkinsMonitor/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="PerkinsMonitor/Controllers/SignOutController.cs" Line="1" Column="1" />
+      <File FileName="PerkinsMonitor/Views/SignOut/Index.cshtml" Line="1" Column="1" />
+      <File FileName="PerkinsMonitor/Controllers/HomeController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

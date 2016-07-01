@@ -1,6 +1,5 @@
 ﻿using System;
 
-using HumDrum.Collections;
 using NLog;
 
 using System.Collections.Generic;
@@ -17,7 +16,7 @@ namespace PerkinsMonitor
 		/// <summary>
 		/// The database file
 		/// </summary>
-		private string DBFile = "/home/nate/perkins.sqlite";
+		private string DBFile = "/databases/perkins.sqlite";
 
 		/// <summary>
 		/// The actual database
@@ -52,7 +51,9 @@ namespace PerkinsMonitor
 				Database = new SqliteConnection ("Data Source=" + DBFile + ";Version=3;");
 				Database.Open ();
 			} catch (Exception e) {
-				Console.WriteLine ("Failure");
+				Console.WriteLine ("Failure. The text of the exception said: " + (e.Message));
+				Console.WriteLine ();
+				Console.WriteLine ("Source of the error is as follows: " + (e.StackTrace));
 			}
 
 		}
@@ -185,7 +186,7 @@ namespace PerkinsMonitor
 		public void SignOut(int ID)
 		{
 			string sql = "";
-			Session latestSession = GetSession (ID).Get (0);
+			Session latestSession = new List<Session>(GetSession (ID))[0];
 
 			GC.Collect ();
 			sql += String.Format ("DELETE FROM loggedIn WHERE studentID = {0};", ID);

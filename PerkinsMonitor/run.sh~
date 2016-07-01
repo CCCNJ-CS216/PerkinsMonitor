@@ -1,0 +1,2 @@
+#!/bin/bash
+xsp4 --root /var/www/html/PerkinsMonitor/PerkinsMonitor/ --port 80 --https --https-client-accept --cert /etc/letsencrypt/live/perkins-monitor.college/cert.pem --pkfile /etc/letsencrypt/live/perkins-monitor.college/privkey.pem 
