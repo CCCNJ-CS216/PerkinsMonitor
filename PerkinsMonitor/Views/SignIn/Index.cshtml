@@ -1,4 +1,5 @@
-﻿@{
+﻿@model string
+@{
     Layout = "../Shared/_Layout.cshtml";
 }
 
@@ -12,9 +13,9 @@
     <div id="survey" class="contentArea">
     	<form action="/SignIn/SignIn/">
     		<div id="fields">
-				<div class="label">Student ID:</div><input name="ID" type="text" onkeyup="tryLookup(ID.value)"> <br>
+				<div class="label">Student ID:</div><input id="ID" name="ID" type="text" onkeyup="tryLookup(ID.value)"> <div class="reloadWarning">@Model</div><br>
 			</div>
-			<input type="submit">
+			<input type="submit" id="submitButton">
     	</form>
     </div>
 </body>

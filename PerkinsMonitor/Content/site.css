@@ -1,18 +1,19 @@
-﻿ï»¿Ã¯Â»Â¿ÃƒÂ¯Ã‚Â»Ã‚Â¿ÃƒÆ’Ã‚Â¯Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â¿ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¯ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â»ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¿.topBar {
+﻿topBar {
 	margin: -1% 0% 2% -1%;
 	padding-left: 1%;
 
 	width: 100%;
 	background-color: #F9F9F9;
 	
-	border-style: none none groove none;
+	border-style: solid;
 	border-width: 2px;
 }
 
 .topTitle {
 	display: inline-block;
 	
-	padding: 0% 0% 2% 10%;
+	font-family: cursive;
+	padding: 0% 0% 0% 10%;
 	font-size: 40px;
 	font-weight: bold;
 }
@@ -38,7 +39,7 @@ input[type=text] {
 
 input[type=submit] {
     padding:5px 15px; 
-	margin-left: 2%;
+	margin-left: 25%;
     background:#ccc; 
     border:0 none;
     border-radius: 5px; 
@@ -104,7 +105,7 @@ table {
 }
 
 td{
-  padding-left: 13%;
+  text-align: center;
 	border-style: solid solid none solid;
 	border-width: 1px;
 }

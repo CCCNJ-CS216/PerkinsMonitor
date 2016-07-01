@@ -1,4 +1,5 @@
 ﻿@using PerkinsMonitor;
+@using System.Linq;
 @using System.Collections.Generic;
 @model IEnumerable<Session>
 
@@ -8,6 +9,8 @@
 }
 
 <body>
+	@if(Model.Count() < 2)
+	{
 	<table>
 	<tr><th>Student ID</th><th>Student</th><th>Time Started</th></tr>
 	@foreach(Session s in Model)
@@ -26,5 +29,9 @@
 		}
 
 	</table>
+	}
+	else{
+	<h2 style="text-align: center;">There are no students logged in at this time</h2>
+	}
 </body>
 

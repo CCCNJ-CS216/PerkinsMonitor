@@ -30,8 +30,9 @@ function tryLookup(id)
 function signIn_validation(){
 
 	if(!formsActivated)
+	{
 		return;
-
+	}
 	if( $("#name").val().includes(" "))
 	{
 		$("#name_tt").hide("slow");
@@ -40,9 +41,17 @@ function signIn_validation(){
 	{
 		$("#name_tt").show("slow");
 	}
+
+
+	if($("#name").val().length > 0 && $("#major").val().length > 0 && $("#ID").val().length > 5 && $("#machineNumber").val().length > 0)
+	{	$("#submitButton").show("slow"); }
+	else { $("#submitButton").hide("slow");}
+	
 }
 
 function signIn_setup(){
 	$(document).ready(function(){
-		setInterval(signIn_validation, 1000);});
+		setInterval(signIn_validation, 1000);
+		$("#submitButton").hide();
+		});
 }

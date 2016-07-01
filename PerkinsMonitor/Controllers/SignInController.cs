@@ -49,21 +49,32 @@ namespace PerkinsMonitor.Controllers
 		/// <returns>The SignIn page</returns>
 		public ActionResult SignIn(string ID, string name, string major, string machineNumber)
 		{
-			
-			StudentDatabase db = new StudentDatabase ();
-			db.Connect ();
 
-			db.SignIn(
-				int.Parse(Request.Params["ID"]), //ID
-				Request.Params["name"].Split(' ')[0], //First
-				Request.Params["name"].Split(' ')[1], //Last
-				Request.Params["major"], // Major
-				int.Parse(Request.Params["machineNumber"]), //MachineNumber
-				(Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds); //TimeIn is now
+			/* Sanitize: Name*/
+			if (Request.Params.AllKeys.Contains ("name") && Request.Params ["name"].Contains (" ")) {
+				/* Sanitize: Major */
+				if (Request.Params.AllKeys.Contains ("major")) {
+					/*Sanitize: MachineNumber */
+					if (Request.Params.AllKeys.Contains ("machineNumber")) {
+						StudentDatabase db = new StudentDatabase ();
+						db.Connect ();
 
-			db.Disconnect ();
+						db.SignIn(
+							int.Parse(Request.Params["ID"]), //ID
+							Request.Params["name"].Split(' ')[0], //First
+							Request.Params["name"].Split(' ')[1], //Last
+							Request.Params["major"], // Major
+							int.Parse(Request.Params["machineNumber"]), //MachineNumber
+							(Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds); //TimeIn is now
 
-			return View ("~/Views/Home/Index.cshtml");
+						db.Disconnect ();
+
+						return View ("~/Views/Home/Index.cshtml");
+					}
+				}
+			}
+
+			return View ("~/Views/SignIn/Index.cshtml", "Warning: Improper Value Detected");
 		}
     }
 }
