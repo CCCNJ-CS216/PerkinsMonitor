@@ -141,3 +141,8 @@ li a {
 	text-align: center;
 	color: red;
 }
+
+select {
+	float: right;
+	margin: 6%;
+}
